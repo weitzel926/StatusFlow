@@ -4,7 +4,7 @@ Pod::Spec.new do |s|
   s.summary      			= "Control for the animated display of a series of cells used to indicate status"
   s.description  			= "A custom UICollectionView for showing the previous, current, and next item in a series of items"
   s.homepage     			= "https://github.com/weitzel926/StatusFlow"
-  s.license      			= { :type => 'MIT', :file => 'MIT.LICENSE' }
+  s.license      			= { :type => "MIT", :file => "MIT.LICENSE" }
   s.author       			= { "Wade Weitzel" => "wade.d.weitzel+github@gmail.com" }
   s.platform     			= :ios
   s.ios.deployment_target 	= "7.0"
