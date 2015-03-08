@@ -10,14 +10,14 @@
 	<string>StatusFlow</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>01DF3C51B5DABB7A4FD19820E258A94CB9434E29</key>
+		<key>3F200C478A98B1BED6578BF75FB106BD04FB011B</key>
 		<string>bitbucket.org:weitzel926/statusflow.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>StatusFlow.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>01DF3C51B5DABB7A4FD19820E258A94CB9434E29</key>
+		<key>3F200C478A98B1BED6578BF75FB106BD04FB011B</key>
 		<string>..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
@@ -25,14 +25,14 @@
 	<key>IDESourceControlProjectVersion</key>
 	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>01DF3C51B5DABB7A4FD19820E258A94CB9434E29</string>
+	<string>3F200C478A98B1BED6578BF75FB106BD04FB011B</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>01DF3C51B5DABB7A4FD19820E258A94CB9434E29</string>
+			<string>3F200C478A98B1BED6578BF75FB106BD04FB011B</string>
 			<key>IDESourceControlWCCName</key>
 			<string>StatusFlow</string>
 		</dict>

@@ -17,11 +17,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="q8o-PA-Qxr" customClass="WDWStatusFlowView">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="q8o-PA-Qxr" customClass="WDWStatusFlowView">
                                 <rect key="frame" x="16" y="153" width="568" height="295"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="51F-s7-JZx"/>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="295" id="Efs-nB-V7c"/>
+                                    <constraint firstAttribute="height" constant="295" id="Efs-nB-V7c"/>
                                 </constraints>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="f9c-h2-pec">
                                     <size key="itemSize" width="100" height="100"/>
@@ -60,7 +60,7 @@
                                     </mask>
                                 </variation>
                             </collectionView>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lvn-bs-LVH">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lvn-bs-LVH">
                                 <rect key="frame" x="524" y="468" width="60" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="LHI-E4-2cJ"/>
@@ -73,7 +73,7 @@
                                     <action selector="advanceTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4sx-K3-SUE"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ecK-jE-Yoq">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ecK-jE-Yoq">
                                 <rect key="frame" x="16" y="468" width="40" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="40" id="AXO-M5-riW"/>

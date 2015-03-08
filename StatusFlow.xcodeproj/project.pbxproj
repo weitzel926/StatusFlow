@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		156CACFCD45965CA10CAD8B6 /* libPods-StatusFlowSpecs.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B9743C96AA0E382CDE832A03 /* libPods-StatusFlowSpecs.a */; };
+		1864BD5C1AACC89700BA2DBD /* WDWExampleStatusFlowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1864BD5B1AACC89700BA2DBD /* WDWExampleStatusFlowViewController.m */; };
+		1864BD5D1AACC89700BA2DBD /* WDWExampleStatusFlowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1864BD5B1AACC89700BA2DBD /* WDWExampleStatusFlowViewController.m */; };
 		18C4A33F1AA4B5E50060789D /* WDWExampleStatusFlowCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C4A33E1AA4B5E50060789D /* WDWExampleStatusFlowCell.m */; };
 		18C4A3401AA4B5E50060789D /* WDWExampleStatusFlowCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C4A33E1AA4B5E50060789D /* WDWExampleStatusFlowCell.m */; };
 		18C4A3421AA4B6120060789D /* WDWExampleStatusFlowCellTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C4A3411AA4B6120060789D /* WDWExampleStatusFlowCellTest.m */; };
@@ -22,8 +24,6 @@
 		18DD4C6E1AA3812100991F7A /* WDWStatusFlowView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18DD4C6C1AA3812100991F7A /* WDWStatusFlowView.m */; };
 		18DD4C751AA3847300991F7A /* WDWStatusFlowLayoutTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 18DD4C721AA3846900991F7A /* WDWStatusFlowLayoutTest.m */; };
 		18DD4C761AA3847700991F7A /* WDWStatusFlowViewTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 18DD4C6F1AA383F400991F7A /* WDWStatusFlowViewTest.m */; };
-		18DD4C791AA3A88800991F7A /* WDWExampleStatusFlowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18DD4C781AA3A88800991F7A /* WDWExampleStatusFlowViewController.m */; };
-		18DD4C7A1AA3A88800991F7A /* WDWExampleStatusFlowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18DD4C781AA3A88800991F7A /* WDWExampleStatusFlowViewController.m */; };
 		18DD4C7D1AA3A8F300991F7A /* WDWExampleStatusFlowViewControllerTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 18DD4C7B1AA3A8F300991F7A /* WDWExampleStatusFlowViewControllerTest.m */; };
 /* End PBXBuildFile section */
 
@@ -38,6 +38,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1864BD5A1AACC89700BA2DBD /* WDWExampleStatusFlowViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WDWExampleStatusFlowViewController.h; sourceTree = "<group>"; };
+		1864BD5B1AACC89700BA2DBD /* WDWExampleStatusFlowViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDWExampleStatusFlowViewController.m; sourceTree = "<group>"; };
 		18C4A33D1AA4B5E50060789D /* WDWExampleStatusFlowCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WDWExampleStatusFlowCell.h; sourceTree = "<group>"; };
 		18C4A33E1AA4B5E50060789D /* WDWExampleStatusFlowCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDWExampleStatusFlowCell.m; sourceTree = "<group>"; };
 		18C4A3411AA4B6120060789D /* WDWExampleStatusFlowCellTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDWExampleStatusFlowCellTest.m; sourceTree = "<group>"; };
@@ -57,8 +59,6 @@
 		18DD4C6C1AA3812100991F7A /* WDWStatusFlowView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WDWStatusFlowView.m; path = StatusFlow/WDWStatusFlowView.m; sourceTree = "<group>"; };
 		18DD4C6F1AA383F400991F7A /* WDWStatusFlowViewTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WDWStatusFlowViewTest.m; path = StatusFlowSpecs/StatusFlowSpecs/WDWStatusFlowViewTest.m; sourceTree = SOURCE_ROOT; };
 		18DD4C721AA3846900991F7A /* WDWStatusFlowLayoutTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WDWStatusFlowLayoutTest.m; path = StatusFlowSpecs/StatusFlowSpecs/WDWStatusFlowLayoutTest.m; sourceTree = SOURCE_ROOT; };
-		18DD4C771AA3A88800991F7A /* WDWExampleStatusFlowViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WDWExampleStatusFlowViewController.h; sourceTree = SOURCE_ROOT; };
-		18DD4C781AA3A88800991F7A /* WDWExampleStatusFlowViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDWExampleStatusFlowViewController.m; sourceTree = SOURCE_ROOT; };
 		18DD4C7B1AA3A8F300991F7A /* WDWExampleStatusFlowViewControllerTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WDWExampleStatusFlowViewControllerTest.m; path = StatusFlowSpecs/WDWExampleStatusFlowViewControllerTest.m; sourceTree = SOURCE_ROOT; };
 		87B201CB8C2CE9BDD9DE0D5C /* Pods-StatusFlowSpecs.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StatusFlowSpecs.release.xcconfig"; path = "Pods/Target Support Files/Pods-StatusFlowSpecs/Pods-StatusFlowSpecs.release.xcconfig"; sourceTree = "<group>"; };
 		B9743C96AA0E382CDE832A03 /* libPods-StatusFlowSpecs.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-StatusFlowSpecs.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -117,10 +117,10 @@
 			isa = PBXGroup;
 			children = (
 				18DD4C661AA3805700991F7A /* StatusFlow */,
-				18DD4C771AA3A88800991F7A /* WDWExampleStatusFlowViewController.h */,
-				18DD4C781AA3A88800991F7A /* WDWExampleStatusFlowViewController.m */,
 				18C4A33D1AA4B5E50060789D /* WDWExampleStatusFlowCell.h */,
 				18C4A33E1AA4B5E50060789D /* WDWExampleStatusFlowCell.m */,
+				1864BD5A1AACC89700BA2DBD /* WDWExampleStatusFlowViewController.h */,
+				1864BD5B1AACC89700BA2DBD /* WDWExampleStatusFlowViewController.m */,
 				18DD4C351AA3746F00991F7A /* AppDelegate.h */,
 				18DD4C361AA3746F00991F7A /* AppDelegate.m */,
 				18DD4C3B1AA3746F00991F7A /* Main.storyboard */,
@@ -323,8 +323,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				18DD4C371AA3746F00991F7A /* AppDelegate.m in Sources */,
-				18DD4C791AA3A88800991F7A /* WDWExampleStatusFlowViewController.m in Sources */,
 				18DD4C691AA3808E00991F7A /* WDWStatusFlowLayout.m in Sources */,
+				1864BD5C1AACC89700BA2DBD /* WDWExampleStatusFlowViewController.m in Sources */,
 				18DD4C341AA3746F00991F7A /* main.m in Sources */,
 				18DD4C6D1AA3812100991F7A /* WDWStatusFlowView.m in Sources */,
 				18C4A33F1AA4B5E50060789D /* WDWExampleStatusFlowCell.m in Sources */,
@@ -335,9 +335,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1864BD5D1AACC89700BA2DBD /* WDWExampleStatusFlowViewController.m in Sources */,
 				18DD4C7D1AA3A8F300991F7A /* WDWExampleStatusFlowViewControllerTest.m in Sources */,
 				18DD4C6A1AA3808E00991F7A /* WDWStatusFlowLayout.m in Sources */,
-				18DD4C7A1AA3A88800991F7A /* WDWExampleStatusFlowViewController.m in Sources */,
 				18C4A3421AA4B6120060789D /* WDWExampleStatusFlowCellTest.m in Sources */,
 				18DD4C6E1AA3812100991F7A /* WDWStatusFlowView.m in Sources */,
 				18DD4C751AA3847300991F7A /* WDWStatusFlowLayoutTest.m in Sources */,
