@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         			= "StatusFlow"
-  s.version      			= "0.0.1"
+  s.version      			= "0.0.2"
   s.summary      			= "Control for the animated display of a series of cells used to indicate status"
   s.description  			= "A custom UICollectionView for showing the previous, current, and next item in a series of items"
   s.homepage     			= "https://github.com/weitzel926/StatusFlow"
