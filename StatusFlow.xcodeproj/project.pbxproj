@@ -1,0 +1,538 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		156CACFCD45965CA10CAD8B6 /* libPods-StatusFlowSpecs.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B9743C96AA0E382CDE832A03 /* libPods-StatusFlowSpecs.a */; };
+		18C4A33F1AA4B5E50060789D /* WDWExampleStatusFlowCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C4A33E1AA4B5E50060789D /* WDWExampleStatusFlowCell.m */; };
+		18C4A3401AA4B5E50060789D /* WDWExampleStatusFlowCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C4A33E1AA4B5E50060789D /* WDWExampleStatusFlowCell.m */; };
+		18C4A3421AA4B6120060789D /* WDWExampleStatusFlowCellTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C4A3411AA4B6120060789D /* WDWExampleStatusFlowCellTest.m */; };
+		18C4A3441AA4C5BF0060789D /* SpecAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18C4A3431AA4C5BF0060789D /* SpecAssets.xcassets */; };
+		18DD4C341AA3746F00991F7A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 18DD4C331AA3746F00991F7A /* main.m */; };
+		18DD4C371AA3746F00991F7A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 18DD4C361AA3746F00991F7A /* AppDelegate.m */; };
+		18DD4C3D1AA3746F00991F7A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18DD4C3B1AA3746F00991F7A /* Main.storyboard */; };
+		18DD4C3F1AA3746F00991F7A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18DD4C3E1AA3746F00991F7A /* Images.xcassets */; };
+		18DD4C691AA3808E00991F7A /* WDWStatusFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 18DD4C681AA3808E00991F7A /* WDWStatusFlowLayout.m */; };
+		18DD4C6A1AA3808E00991F7A /* WDWStatusFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 18DD4C681AA3808E00991F7A /* WDWStatusFlowLayout.m */; };
+		18DD4C6D1AA3812100991F7A /* WDWStatusFlowView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18DD4C6C1AA3812100991F7A /* WDWStatusFlowView.m */; };
+		18DD4C6E1AA3812100991F7A /* WDWStatusFlowView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18DD4C6C1AA3812100991F7A /* WDWStatusFlowView.m */; };
+		18DD4C751AA3847300991F7A /* WDWStatusFlowLayoutTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 18DD4C721AA3846900991F7A /* WDWStatusFlowLayoutTest.m */; };
+		18DD4C761AA3847700991F7A /* WDWStatusFlowViewTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 18DD4C6F1AA383F400991F7A /* WDWStatusFlowViewTest.m */; };
+		18DD4C791AA3A88800991F7A /* WDWExampleStatusFlowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18DD4C781AA3A88800991F7A /* WDWExampleStatusFlowViewController.m */; };
+		18DD4C7A1AA3A88800991F7A /* WDWExampleStatusFlowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18DD4C781AA3A88800991F7A /* WDWExampleStatusFlowViewController.m */; };
+		18DD4C7D1AA3A8F300991F7A /* WDWExampleStatusFlowViewControllerTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 18DD4C7B1AA3A8F300991F7A /* WDWExampleStatusFlowViewControllerTest.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		18DD4C611AA376FC00991F7A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 18DD4C261AA3746E00991F7A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 18DD4C2D1AA3746F00991F7A;
+			remoteInfo = StatusFlow;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		18C4A33D1AA4B5E50060789D /* WDWExampleStatusFlowCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WDWExampleStatusFlowCell.h; sourceTree = "<group>"; };
+		18C4A33E1AA4B5E50060789D /* WDWExampleStatusFlowCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDWExampleStatusFlowCell.m; sourceTree = "<group>"; };
+		18C4A3411AA4B6120060789D /* WDWExampleStatusFlowCellTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDWExampleStatusFlowCellTest.m; sourceTree = "<group>"; };
+		18C4A3431AA4C5BF0060789D /* SpecAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = SpecAssets.xcassets; sourceTree = "<group>"; };
+		18DD4C2E1AA3746F00991F7A /* StatusFlow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StatusFlow.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		18DD4C321AA3746F00991F7A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		18DD4C331AA3746F00991F7A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		18DD4C351AA3746F00991F7A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		18DD4C361AA3746F00991F7A /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		18DD4C3C1AA3746F00991F7A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		18DD4C3E1AA3746F00991F7A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		18DD4C5B1AA376FC00991F7A /* StatusFlowSpecs.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StatusFlowSpecs.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		18DD4C5E1AA376FC00991F7A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		18DD4C671AA3808E00991F7A /* WDWStatusFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WDWStatusFlowLayout.h; path = StatusFlow/WDWStatusFlowLayout.h; sourceTree = "<group>"; };
+		18DD4C681AA3808E00991F7A /* WDWStatusFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WDWStatusFlowLayout.m; path = StatusFlow/WDWStatusFlowLayout.m; sourceTree = "<group>"; };
+		18DD4C6B1AA3812100991F7A /* WDWStatusFlowView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WDWStatusFlowView.h; path = StatusFlow/WDWStatusFlowView.h; sourceTree = "<group>"; };
+		18DD4C6C1AA3812100991F7A /* WDWStatusFlowView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WDWStatusFlowView.m; path = StatusFlow/WDWStatusFlowView.m; sourceTree = "<group>"; };
+		18DD4C6F1AA383F400991F7A /* WDWStatusFlowViewTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WDWStatusFlowViewTest.m; path = StatusFlowSpecs/StatusFlowSpecs/WDWStatusFlowViewTest.m; sourceTree = SOURCE_ROOT; };
+		18DD4C721AA3846900991F7A /* WDWStatusFlowLayoutTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WDWStatusFlowLayoutTest.m; path = StatusFlowSpecs/StatusFlowSpecs/WDWStatusFlowLayoutTest.m; sourceTree = SOURCE_ROOT; };
+		18DD4C771AA3A88800991F7A /* WDWExampleStatusFlowViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WDWExampleStatusFlowViewController.h; sourceTree = SOURCE_ROOT; };
+		18DD4C781AA3A88800991F7A /* WDWExampleStatusFlowViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDWExampleStatusFlowViewController.m; sourceTree = SOURCE_ROOT; };
+		18DD4C7B1AA3A8F300991F7A /* WDWExampleStatusFlowViewControllerTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WDWExampleStatusFlowViewControllerTest.m; path = StatusFlowSpecs/WDWExampleStatusFlowViewControllerTest.m; sourceTree = SOURCE_ROOT; };
+		87B201CB8C2CE9BDD9DE0D5C /* Pods-StatusFlowSpecs.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StatusFlowSpecs.release.xcconfig"; path = "Pods/Target Support Files/Pods-StatusFlowSpecs/Pods-StatusFlowSpecs.release.xcconfig"; sourceTree = "<group>"; };
+		B9743C96AA0E382CDE832A03 /* libPods-StatusFlowSpecs.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-StatusFlowSpecs.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D3C23F0305875545CD1D9BAF /* Pods-StatusFlowSpecs.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StatusFlowSpecs.debug.xcconfig"; path = "Pods/Target Support Files/Pods-StatusFlowSpecs/Pods-StatusFlowSpecs.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		18DD4C2B1AA3746F00991F7A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		18DD4C581AA376FC00991F7A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				156CACFCD45965CA10CAD8B6 /* libPods-StatusFlowSpecs.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0718F7AC768FD2F55304A7C7 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D3C23F0305875545CD1D9BAF /* Pods-StatusFlowSpecs.debug.xcconfig */,
+				87B201CB8C2CE9BDD9DE0D5C /* Pods-StatusFlowSpecs.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		18DD4C251AA3746E00991F7A = {
+			isa = PBXGroup;
+			children = (
+				18DD4C301AA3746F00991F7A /* StatusFlow */,
+				18DD4C5C1AA376FC00991F7A /* StatusFlowSpecs */,
+				18DD4C2F1AA3746F00991F7A /* Products */,
+				0718F7AC768FD2F55304A7C7 /* Pods */,
+				1F9D3B63C1AF174B74BAAB8C /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		18DD4C2F1AA3746F00991F7A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				18DD4C2E1AA3746F00991F7A /* StatusFlow.app */,
+				18DD4C5B1AA376FC00991F7A /* StatusFlowSpecs.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		18DD4C301AA3746F00991F7A /* StatusFlow */ = {
+			isa = PBXGroup;
+			children = (
+				18DD4C661AA3805700991F7A /* StatusFlow */,
+				18DD4C771AA3A88800991F7A /* WDWExampleStatusFlowViewController.h */,
+				18DD4C781AA3A88800991F7A /* WDWExampleStatusFlowViewController.m */,
+				18C4A33D1AA4B5E50060789D /* WDWExampleStatusFlowCell.h */,
+				18C4A33E1AA4B5E50060789D /* WDWExampleStatusFlowCell.m */,
+				18DD4C351AA3746F00991F7A /* AppDelegate.h */,
+				18DD4C361AA3746F00991F7A /* AppDelegate.m */,
+				18DD4C3B1AA3746F00991F7A /* Main.storyboard */,
+				18DD4C3E1AA3746F00991F7A /* Images.xcassets */,
+				18DD4C311AA3746F00991F7A /* Supporting Files */,
+			);
+			path = StatusFlow;
+			sourceTree = "<group>";
+		};
+		18DD4C311AA3746F00991F7A /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				18DD4C321AA3746F00991F7A /* Info.plist */,
+				18DD4C331AA3746F00991F7A /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		18DD4C5C1AA376FC00991F7A /* StatusFlowSpecs */ = {
+			isa = PBXGroup;
+			children = (
+				18DD4C7B1AA3A8F300991F7A /* WDWExampleStatusFlowViewControllerTest.m */,
+				18C4A3411AA4B6120060789D /* WDWExampleStatusFlowCellTest.m */,
+				18DD4C711AA383FF00991F7A /* StatusFlowSpecs */,
+				18DD4C5D1AA376FC00991F7A /* Supporting Files */,
+				18C4A3431AA4C5BF0060789D /* SpecAssets.xcassets */,
+			);
+			path = StatusFlowSpecs;
+			sourceTree = "<group>";
+		};
+		18DD4C5D1AA376FC00991F7A /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				18DD4C5E1AA376FC00991F7A /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		18DD4C661AA3805700991F7A /* StatusFlow */ = {
+			isa = PBXGroup;
+			children = (
+				18DD4C671AA3808E00991F7A /* WDWStatusFlowLayout.h */,
+				18DD4C681AA3808E00991F7A /* WDWStatusFlowLayout.m */,
+				18DD4C6B1AA3812100991F7A /* WDWStatusFlowView.h */,
+				18DD4C6C1AA3812100991F7A /* WDWStatusFlowView.m */,
+			);
+			name = StatusFlow;
+			sourceTree = "<group>";
+		};
+		18DD4C711AA383FF00991F7A /* StatusFlowSpecs */ = {
+			isa = PBXGroup;
+			children = (
+				18DD4C721AA3846900991F7A /* WDWStatusFlowLayoutTest.m */,
+				18DD4C6F1AA383F400991F7A /* WDWStatusFlowViewTest.m */,
+			);
+			name = StatusFlowSpecs;
+			sourceTree = "<group>";
+		};
+		1F9D3B63C1AF174B74BAAB8C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B9743C96AA0E382CDE832A03 /* libPods-StatusFlowSpecs.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		18DD4C2D1AA3746F00991F7A /* StatusFlow */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 18DD4C511AA3746F00991F7A /* Build configuration list for PBXNativeTarget "StatusFlow" */;
+			buildPhases = (
+				18DD4C2A1AA3746F00991F7A /* Sources */,
+				18DD4C2B1AA3746F00991F7A /* Frameworks */,
+				18DD4C2C1AA3746F00991F7A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = StatusFlow;
+			productName = StatusFlow;
+			productReference = 18DD4C2E1AA3746F00991F7A /* StatusFlow.app */;
+			productType = "com.apple.product-type.application";
+		};
+		18DD4C5A1AA376FC00991F7A /* StatusFlowSpecs */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 18DD4C651AA376FC00991F7A /* Build configuration list for PBXNativeTarget "StatusFlowSpecs" */;
+			buildPhases = (
+				979B1D42092187A7BD4E0528 /* Check Pods Manifest.lock */,
+				18DD4C571AA376FC00991F7A /* Sources */,
+				18DD4C581AA376FC00991F7A /* Frameworks */,
+				18DD4C591AA376FC00991F7A /* Resources */,
+				51604926BB8E58B4CDB7BF1D /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				18DD4C621AA376FC00991F7A /* PBXTargetDependency */,
+			);
+			name = StatusFlowSpecs;
+			productName = StatusFlowSpecs;
+			productReference = 18DD4C5B1AA376FC00991F7A /* StatusFlowSpecs.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		18DD4C261AA3746E00991F7A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0610;
+				ORGANIZATIONNAME = "Wade Weitzel";
+				TargetAttributes = {
+					18DD4C2D1AA3746F00991F7A = {
+						CreatedOnToolsVersion = 6.1.1;
+					};
+					18DD4C5A1AA376FC00991F7A = {
+						CreatedOnToolsVersion = 6.1.1;
+						TestTargetID = 18DD4C2D1AA3746F00991F7A;
+					};
+				};
+			};
+			buildConfigurationList = 18DD4C291AA3746E00991F7A /* Build configuration list for PBXProject "StatusFlow" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 18DD4C251AA3746E00991F7A;
+			productRefGroup = 18DD4C2F1AA3746F00991F7A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				18DD4C2D1AA3746F00991F7A /* StatusFlow */,
+				18DD4C5A1AA376FC00991F7A /* StatusFlowSpecs */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		18DD4C2C1AA3746F00991F7A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				18DD4C3D1AA3746F00991F7A /* Main.storyboard in Resources */,
+				18DD4C3F1AA3746F00991F7A /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		18DD4C591AA376FC00991F7A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				18C4A3441AA4C5BF0060789D /* SpecAssets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		51604926BB8E58B4CDB7BF1D /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-StatusFlowSpecs/Pods-StatusFlowSpecs-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		979B1D42092187A7BD4E0528 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		18DD4C2A1AA3746F00991F7A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				18DD4C371AA3746F00991F7A /* AppDelegate.m in Sources */,
+				18DD4C791AA3A88800991F7A /* WDWExampleStatusFlowViewController.m in Sources */,
+				18DD4C691AA3808E00991F7A /* WDWStatusFlowLayout.m in Sources */,
+				18DD4C341AA3746F00991F7A /* main.m in Sources */,
+				18DD4C6D1AA3812100991F7A /* WDWStatusFlowView.m in Sources */,
+				18C4A33F1AA4B5E50060789D /* WDWExampleStatusFlowCell.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		18DD4C571AA376FC00991F7A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				18DD4C7D1AA3A8F300991F7A /* WDWExampleStatusFlowViewControllerTest.m in Sources */,
+				18DD4C6A1AA3808E00991F7A /* WDWStatusFlowLayout.m in Sources */,
+				18DD4C7A1AA3A88800991F7A /* WDWExampleStatusFlowViewController.m in Sources */,
+				18C4A3421AA4B6120060789D /* WDWExampleStatusFlowCellTest.m in Sources */,
+				18DD4C6E1AA3812100991F7A /* WDWStatusFlowView.m in Sources */,
+				18DD4C751AA3847300991F7A /* WDWStatusFlowLayoutTest.m in Sources */,
+				18C4A3401AA4B5E50060789D /* WDWExampleStatusFlowCell.m in Sources */,
+				18DD4C761AA3847700991F7A /* WDWStatusFlowViewTest.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		18DD4C621AA376FC00991F7A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 18DD4C2D1AA3746F00991F7A /* StatusFlow */;
+			targetProxy = 18DD4C611AA376FC00991F7A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		18DD4C3B1AA3746F00991F7A /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				18DD4C3C1AA3746F00991F7A /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		18DD4C4F1AA3746F00991F7A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		18DD4C501AA3746F00991F7A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		18DD4C521AA3746F00991F7A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = StatusFlow/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		18DD4C531AA3746F00991F7A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = StatusFlow/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		18DD4C631AA376FC00991F7A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D3C23F0305875545CD1D9BAF /* Pods-StatusFlowSpecs.debug.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = StatusFlowSpecs/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/StatusFlow.app/StatusFlow";
+			};
+			name = Debug;
+		};
+		18DD4C641AA376FC00991F7A /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 87B201CB8C2CE9BDD9DE0D5C /* Pods-StatusFlowSpecs.release.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = StatusFlowSpecs/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/StatusFlow.app/StatusFlow";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		18DD4C291AA3746E00991F7A /* Build configuration list for PBXProject "StatusFlow" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				18DD4C4F1AA3746F00991F7A /* Debug */,
+				18DD4C501AA3746F00991F7A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		18DD4C511AA3746F00991F7A /* Build configuration list for PBXNativeTarget "StatusFlow" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				18DD4C521AA3746F00991F7A /* Debug */,
+				18DD4C531AA3746F00991F7A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		18DD4C651AA376FC00991F7A /* Build configuration list for PBXNativeTarget "StatusFlowSpecs" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				18DD4C631AA376FC00991F7A /* Debug */,
+				18DD4C641AA376FC00991F7A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 18DD4C261AA3746E00991F7A /* Project object */;
+}

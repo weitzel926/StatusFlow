@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--Example Status Flow View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController storyboardIdentifier="WDWExampleStatusFlowViewController" id="BYZ-38-t0r" customClass="WDWExampleStatusFlowViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="q8o-PA-Qxr" customClass="WDWStatusFlowView">
+                                <rect key="frame" x="16" y="153" width="568" height="295"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="51F-s7-JZx"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="295" id="Efs-nB-V7c"/>
+                                </constraints>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="f9c-h2-pec">
+                                    <size key="itemSize" width="100" height="100"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="WDWExampleCell" reuseIdentifier="WDWExampleCell" id="Pvd-Mk-BwK" customClass="WDWExampleStatusFlowCell">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ciU-ti-OTh">
+                                                    <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                                </imageView>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstAttribute="trailingMargin" secondItem="ciU-ti-OTh" secondAttribute="trailing" constant="-8" id="9Ab-zb-UAm"/>
+                                            <constraint firstItem="ciU-ti-OTh" firstAttribute="top" secondItem="Pvd-Mk-BwK" secondAttribute="topMargin" constant="-8" id="ikQ-yw-MXc"/>
+                                            <constraint firstAttribute="bottomMargin" secondItem="ciU-ti-OTh" secondAttribute="bottom" constant="-8" id="nCO-Fg-TzS"/>
+                                            <constraint firstItem="ciU-ti-OTh" firstAttribute="leading" secondItem="Pvd-Mk-BwK" secondAttribute="leadingMargin" constant="-8" id="xLB-BH-aGL"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="imageView" destination="ciU-ti-OTh" id="Agg-sh-Mgy"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="51F-s7-JZx"/>
+                                    </mask>
+                                </variation>
+                            </collectionView>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lvn-bs-LVH">
+                                <rect key="frame" x="524" y="468" width="60" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="LHI-E4-2cJ"/>
+                                    <constraint firstAttribute="width" constant="60" id="MRc-kV-X2x"/>
+                                </constraints>
+                                <state key="normal" title="Advance">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="advanceTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4sx-K3-SUE"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ecK-jE-Yoq">
+                                <rect key="frame" x="16" y="468" width="40" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="40" id="AXO-M5-riW"/>
+                                    <constraint firstAttribute="height" constant="30" id="Lhf-ry-TBK"/>
+                                </constraints>
+                                <state key="normal" title="Back">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="backTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Crt-7o-Ztt"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerY" secondItem="q8o-PA-Qxr" secondAttribute="centerY" id="7lg-dG-DXA"/>
+                            <constraint firstItem="Lvn-bs-LVH" firstAttribute="top" secondItem="q8o-PA-Qxr" secondAttribute="bottom" constant="20" id="PeP-Xc-byq"/>
+                            <constraint firstItem="q8o-PA-Qxr" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="T0K-Pd-ImG"/>
+                            <constraint firstItem="ecK-jE-Yoq" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="frN-yU-SDj"/>
+                            <constraint firstItem="Lvn-bs-LVH" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="h6z-uA-j69"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="q8o-PA-Qxr" secondAttribute="trailing" id="oNe-sc-A5H"/>
+                            <constraint firstItem="ecK-jE-Yoq" firstAttribute="top" secondItem="q8o-PA-Qxr" secondAttribute="bottom" constant="20" id="ubU-bz-M4V"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="statusFlowView" destination="q8o-PA-Qxr" id="IEp-vo-GJn"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="786" y="573"/>
+        </scene>
+    </scenes>
+</document>
