@@ -74,10 +74,6 @@ describe(@"WDWExampleStatusFlowViewController", ^{
         expect(controller).to.beKindOf([UIViewController class]);
     });
     
-    it(@"confroms to the UICollectionViewDelegate protocol", ^{
-        expect(controller).to.conformTo(@protocol(UICollectionViewDelegate));
-    });
-    
     it(@"conforms to the UICollectionViewDataSource protocol", ^{
         expect(controller).to.conformTo(@protocol(UICollectionViewDataSource));
     });
@@ -90,10 +86,6 @@ describe(@"WDWExampleStatusFlowViewController", ^{
         context(@"statusFlowView", ^{
             it(@"has a statusFlowView", ^{
                 expect(controller.statusFlowView).toNot.beNil();
-            });
-            
-            it(@"sets the statusFlowView delegate to itself", ^{
-                expect(controller.statusFlowView.delegate).to.equal(controller);
             });
             
             it(@"sets the statusFlowView dataSource to itself", ^{

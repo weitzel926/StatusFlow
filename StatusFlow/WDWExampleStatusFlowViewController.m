@@ -68,7 +68,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.statusFlowView.delegate = self;
     self.statusFlowView.dataSource = self;
     self.statusFlowView.gapBetweenCells = 10;
 }
@@ -97,9 +96,6 @@
 
     return cell;
 }
-
-#pragma - UICollectionViewDelegate
-
 
 #pragma - private handlers
 - (IBAction)advanceTapped:(id)sender

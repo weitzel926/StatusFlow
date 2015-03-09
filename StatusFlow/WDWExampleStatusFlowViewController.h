@@ -21,6 +21,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface WDWExampleStatusFlowViewController : UIViewController <UICollectionViewDelegate, UICollectionViewDataSource>
+@interface WDWExampleStatusFlowViewController : UIViewController <UICollectionViewDataSource>
 
 @end
