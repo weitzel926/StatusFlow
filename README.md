@@ -46,6 +46,39 @@ StatusFlowView works very similar to using a UICollectionView.  See the example 
 8. Implement collectionView:numberOfItemsInSection.  Note that there can only be ONE section.  
 9. Implement collectionView:cellForItemAtIndexPath
 10. Increment or decrement the StatusFlowView by incrementing or decrementing the selectedIndex property of the StatusFlowView.  It is recommended that you only increment or decrement this value by one (although greater jumps are supported).  If you go out of bounds, blank cells with be drawn.  
+
+### Using this repo
+
+Your machine should have the following before you begin: [ruby](https://github.com/sstephenson/rbenv), [ruby gems](https://rubygems.org/pages/download), [bundler](http://bundler.io)
+
+To setup the project, run the included setup.sh.  This will install required Gems and perform a pod install.  
+
+```bash
+$ ./setup.sh
+```
+
+To open the project in XCode run
+
+```bash
+$ open StatusFlow.xcworkspace
+```
+
+To test the project from the command line:
+
+```bash
+$ bundle exec rake
+```
+
+To build the project from the command line:
+```bash
+$ bundle exec rake build
+```
+
+To clean the project form the command line:
+```bash
+$ bundle exec rake clean
+```
+
 ## Acknowledgements
 
 A tip of the crow to [Ryan Baumbach](https://github.com/rbaumbach) for assistance with Travis ci.  
