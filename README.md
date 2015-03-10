@@ -39,13 +39,14 @@ StatusFlowView works very similar to using a UICollectionView.  See the example 
 1. Use storyboards to create a storyboard for the view controller the has your StatusFlow in it.  Drag a UICollectionView to your view controller.  This will be the status flow.  
 2. Set the Custom Class -> Class property of the storyboard to WDWStatusFlow. 
 3. Create an outlet from the StatusFlow to your view controller.  This can be a private property.  
-4. Create a cell class in XCode.  It should inherit from UICollectionViewCell.  Note that the size of the cell will be the size of the center cell.  
+4. Create a cell class in XCode.  It should inherit from UICollectionViewCell.  
 5. Create the cell in the storyboard, and link it to the cell class using the Custom Class -> Class property. 
-6. Make sure your UIViewController conforms to UICollectionViewDataSource. 
+6. Make sure your UIViewController conforms to UICollectionViewDataSource and UICollectionViewDelegateFlowLayout (for collectionView:layout:sizeForItemAtIndexPath). 
 7. In your ViewController's viewDidLoad method, use the StatusFlowView's gapBetweenCells property to define the space between each cell.  The default is 5.  
 8. Implement collectionView:numberOfItemsInSection.  Note that there can only be ONE section.  
 9. Implement collectionView:cellForItemAtIndexPath
-10. Increment or decrement the StatusFlowView by incrementing or decrementing the selectedIndex property of the StatusFlowView.  It is recommended that you only increment or decrement this value by one (although greater jumps are supported).  If you go out of bounds, blank cells with be drawn.  
+10. Implement collectionView:layout:sizeForItemAtIndexPath: to set the cell's size.  The size of the cell is the size of the cell when it is NOT selected.  It will double in size when selected.  If your selected cell is larger than the collection view in width or height, it may not render properly.    
+11. Increment or decrement the StatusFlowView by incrementing or decrementing the selectedIndex property of the StatusFlowView.  It is recommended that you only increment or decrement this value by one (although greater jumps are supported).  
 
 ### Using this repo
 
