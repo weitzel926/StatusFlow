@@ -78,6 +78,10 @@ describe(@"WDWExampleStatusFlowViewController", ^{
         expect(controller).to.conformTo(@protocol(UICollectionViewDataSource));
     });
     
+    it(@"conforms to the UICollectionViewDelegateFlowLayout protocol", ^{
+        expect(controller).to.conformTo(@protocol(UICollectionViewDelegateFlowLayout));
+    });
+    
     describe(@"#viewDidLoad", ^{
        beforeEach(^{
             [controller view];
@@ -90,6 +94,10 @@ describe(@"WDWExampleStatusFlowViewController", ^{
             
             it(@"sets the statusFlowView dataSource to itself", ^{
                 expect(controller.statusFlowView.dataSource).to.equal(controller);
+            });
+            
+            it(@"sets the statusFlowView delegate to itself", ^{
+                expect(controller.statusFlowView.delegate).to.equal(controller);
             });
             
             it(@"sets the gap between the cells", ^{
@@ -169,6 +177,36 @@ describe(@"WDWExampleStatusFlowViewController", ^{
                 expect(cell).to.beNil();
             });
         });
+    });
+    
+    describe(@"collectionView:layout:sizeForItemAtIndexPath", ^{
+        __block CGSize size;
+        
+        context(@"valid index path", ^{
+            beforeEach(^{
+                NSIndexPath *path = [NSIndexPath indexPathForRow:0 inSection:0];
+                
+                size = [controller collectionView:controller.statusFlowView layout:controller.statusFlowView.collectionViewLayout sizeForItemAtIndexPath:path];
+            });
+            
+            it(@"returns a 50,50 cell size", ^{
+                expect(size).to.equal(CGSizeMake(50,50));
+            });
+        });
+        
+        context(@"invalid index path", ^{
+            beforeEach(^{
+                NSIndexPath *path = [NSIndexPath indexPathForRow:0 inSection:1];
+                
+                size = [controller collectionView:controller.statusFlowView layout:controller.statusFlowView.collectionViewLayout sizeForItemAtIndexPath:path];
+            });
+            
+            it(@"returns a 0,0 cell size because there is only one section", ^{
+                expect(size).to.equal(CGSizeZero);
+            });
+        });
+        
+        
     });
     
     describe(@"#advanceTapped", ^{

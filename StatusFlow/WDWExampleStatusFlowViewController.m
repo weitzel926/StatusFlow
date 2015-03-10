@@ -69,6 +69,7 @@
 {
     [super viewDidLoad];
     self.statusFlowView.dataSource = self;
+    self.statusFlowView.delegate = self;
     self.statusFlowView.gapBetweenCells = 10;
 }
 
@@ -95,6 +96,17 @@
     }
 
     return cell;
+}
+
+#pragma - UICollectionViewDelegate
+
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (indexPath.section == 0){
+        return CGSizeMake(50, 50);
+    }
+    
+    return CGSizeZero;
 }
 
 #pragma - private handlers
