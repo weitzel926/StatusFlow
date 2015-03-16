@@ -27,10 +27,11 @@ Use [CocoaPods](http://cocoapods.org/) to add StatusFlow to your project.
 ##### Via direct usage
 
 Copy the following files into your workspace, or add them as a submodule:
-* StatusFlowView.h
-* StatusFlowView.m
-* StatusFlowViewLayout.h
-* StatusFlowViewLayout.m
+* WDWStatusFlowView.h
+* WDWStatusFlowView.m
+* WDWStatusFlowViewLayout.h
+* WDWStatusFlowViewLayout.m
+* WDWStatusFlowEnum.h
 
 ### Creating a StatusFlow
 
