@@ -22,7 +22,7 @@ Use [CocoaPods](http://cocoapods.org/) to add StatusFlow to your project.
 1. Add the StatusFlow pod to your podfile:  `pod 'StatusFlow'`
 2. Run pod install from your project folder to get the StatusFlow pod: `pod install`
 3. Open your project in XCode using the workspace instead of the project file:  `open <your_project>.xcworkspace`
-4. `#import <StatusFlow/StatusFlowView.h>` to use StatusFlow
+4. `#import <StatusFlow/WDWStatusFlowView.h>` to use StatusFlow
 
 ##### Via direct usage
 
