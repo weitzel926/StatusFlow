@@ -58,6 +58,13 @@
     [self resetLayout];
 }
 
+- (void)setDirection:(WDWStatusFlowViewDirection)direction
+{
+    _direction = direction;
+    
+    [self resetLayout];
+}
+
 - (void)setSelectedIndex:(NSInteger)index
 {
     _selectedIndex = index;
@@ -73,7 +80,7 @@
 - (void)resetLayout
 {
     NSIndexPath *selectedItemPath = [NSIndexPath indexPathForRow:self.selectedIndex inSection:0];
-    WDWStatusFlowLayout *layout = [[WDWStatusFlowLayout alloc] initWithSelectedItemPath:selectedItemPath];
+    WDWStatusFlowLayout *layout = [[WDWStatusFlowLayout alloc] initWithSelectedItemPath:selectedItemPath andDirection:self.direction];
     layout.gapBetweenCells = self.gapBetweenCells;
     [self setCollectionViewLayout:layout animated:YES];
 }

@@ -7,6 +7,7 @@
 
 @interface WDWStatusFlowLayout (Test)
 @property (nonatomic, strong) NSIndexPath *selectedItemPath;
+@property (nonatomic, assign) WDWStatusFlowViewDirection direction;
 
 -(void)modifyAttributes:(UICollectionViewLayoutAttributes *)attributes;
 @end
@@ -18,7 +19,7 @@ describe(@"WDWStatusFlowLayout", ^{
 
     beforeEach(^{
         NSIndexPath *indexPath = [NSIndexPath indexPathForRow:3 inSection:0];
-        layout = [[WDWStatusFlowLayout alloc] initWithSelectedItemPath:indexPath];
+        layout = [[WDWStatusFlowLayout alloc] initWithSelectedItemPath:indexPath andDirection:WDWStatusFlowViewDirectionVertical];
     });
     
     it(@"sets the index path property", ^{
@@ -27,6 +28,31 @@ describe(@"WDWStatusFlowLayout", ^{
     
     it(@"defaults the gapBetweenCells property to 5", ^{
         expect(layout.gapBetweenCells).to.equal(5);
+    });
+    
+    it(@"sets the direction", ^{
+        expect(layout.direction).to.equal(WDWStatusFlowViewDirectionVertical);
+    });
+    
+    describe(@"#initWithSelectedItemPath:  DEPRECATED", ^{
+        __block WDWStatusFlowLayout *oldInitLayout;
+        
+        beforeEach(^{
+            NSIndexPath *indexPath = [NSIndexPath indexPathForRow:3 inSection:0];
+            oldInitLayout = [[WDWStatusFlowLayout alloc] initWithSelectedItemPath:indexPath];
+        });
+        
+        it(@"sets the index path property", ^{
+            expect(oldInitLayout.selectedItemPath).to.equal([NSIndexPath indexPathForRow:3 inSection:0]);
+        });
+        
+        it(@"defaults the gapBetweenCells property to 5", ^{
+            expect(oldInitLayout.gapBetweenCells).to.equal(5);
+        });
+        
+        it(@"defaults the direction to horizontal", ^{
+            expect(oldInitLayout.direction).to.equal(WDWStatusFlowViewDirectionHorizontal);
+        });
     });
 
     describe(@"#layoutAttributesForItemAtIndexPath:", ^{
@@ -109,7 +135,6 @@ describe(@"WDWStatusFlowLayout", ^{
         
         beforeEach(^{
             collectionViewMock = OCMClassMock([UICollectionView class]);
-            OCMStub([collectionViewMock frame]).andReturn(CGRectMake(0,0,1000,100));
             
             layoutSwizz = [[Swizzlean alloc] initWithClassToSwizzle:[UICollectionViewFlowLayout class]];
             [layoutSwizz swizzleInstanceMethod:@selector(collectionView) withReplacementImplementation:^(id _self){
@@ -122,7 +147,7 @@ describe(@"WDWStatusFlowLayout", ^{
             
             attributes = [[UICollectionViewLayoutAttributes alloc] init];
             attributes.center = CGPointMake(0,0);
-            attributes.size = CGSizeMake(100,100);
+            attributes.size = CGSizeMake(100,50);
         });
         
         afterEach(^{
@@ -131,18 +156,20 @@ describe(@"WDWStatusFlowLayout", ^{
         
         context(@"invalid index path (this should only ever have one section)", ^{
             beforeEach(^{
+                OCMStub([collectionViewMock frame]).andReturn(CGRectMake(0,0,1000,100));
                 attributes.indexPath = [NSIndexPath indexPathForRow:0 inSection:39];
                 [layout modifyAttributes:attributes];
             });
             
             it(@"does not modify attributes", ^{
                 expect(attributes.center).to.equal(CGPointMake(0,0));
-                expect(attributes.size).to.equal(CGSizeMake(100,100));
+                expect(attributes.size).to.equal(CGSizeMake(100,50));
             });
         });
         
         context(@"attributes are for cell in selected index path", ^{
             beforeEach(^{
+                OCMStub([collectionViewMock frame]).andReturn(CGRectMake(0,0,1000,100));
                 attributes.indexPath = layout.selectedItemPath;
                 [layout modifyAttributes:attributes];
             });
@@ -161,68 +188,149 @@ describe(@"WDWStatusFlowLayout", ^{
             });
         });
         
-        context(@"attributes are for cell left of the selected index path", ^{
-            context(@"visible cell", ^{
-                beforeEach(^{
-                    attributes.indexPath = [NSIndexPath indexPathForRow:4 inSection:0];
-                    [layout modifyAttributes:attributes];
+        context(@"horizontal flow", ^{
+            beforeEach(^{
+                layout.direction = WDWStatusFlowViewDirectionHorizontal;
+                OCMStub([collectionViewMock frame]).andReturn(CGRectMake(0,0,1000,100));
+            });
+            
+            context(@"attributes are for cell left of the selected index path", ^{
+                context(@"visible cell", ^{
+                    beforeEach(^{
+                        attributes.indexPath = [NSIndexPath indexPathForRow:4 inSection:0];
+                        [layout modifyAttributes:attributes];
+                    });
+                    
+                    it(@"sets the cell center (one position left of center)", ^{
+                        expect(attributes.center).to.equal(CGPointMake(340,50));
+                    });
+                    
+                    it(@"sets the hidden attribute to NO", ^{
+                        expect(attributes.hidden).to.equal(NO);
+                    });
                 });
                 
-                it(@"sets the cell center (one position left of center)", ^{
-                    expect(attributes.center).to.equal(CGPointMake(340,50));
-                });
-                
-                it(@"sets the hidden attribute to NO", ^{
-                    expect(attributes.hidden).to.equal(NO);
+                context(@"hidden cell", ^{
+                    beforeEach(^{
+                        attributes.indexPath = [NSIndexPath indexPathForRow:3 inSection:0];
+                        [layout modifyAttributes:attributes];
+                    });
+                    
+                    it(@"sets the cell center (two positions left of center)", ^{
+                        expect(attributes.center).to.equal(CGPointMake(230, 50));
+                    });
+                    
+                    it(@"sets the cell to be invisible", ^{
+                        expect(attributes.alpha).to.equal(0);
+                        expect(attributes.hidden).to.equal(YES);
+                    });
                 });
             });
             
-            context(@"hidden cell", ^{
-                beforeEach(^{
-                    attributes.indexPath = [NSIndexPath indexPathForRow:3 inSection:0];
-                    [layout modifyAttributes:attributes];
+            context(@"attributes are for cell right of the selected index path", ^{
+                context(@"visible cell", ^{
+                    beforeEach(^{
+                        attributes.indexPath = [NSIndexPath indexPathForRow:6 inSection:0];
+                        [layout modifyAttributes:attributes];
+                    });
+                    
+                    it(@"sets the cell center (one position right of center)", ^{
+                        expect(attributes.center).to.equal(CGPointMake(660,50));
+                    });
+                    
+                    it(@"sets the hidden attribute to NO", ^{
+                        expect(attributes.hidden).to.equal(NO);
+                    });
                 });
                 
-                it(@"sets the cell center (two positions left of center)", ^{
-                    expect(attributes.center).to.equal(CGPointMake(230, 50));
-                });
-                
-                it(@"sets the cell to be invisible", ^{
-                    expect(attributes.alpha).to.equal(0);
-                    expect(attributes.hidden).to.equal(YES);
+                context(@"hidden cell", ^{
+                    beforeEach(^{
+                        attributes.indexPath = [NSIndexPath indexPathForRow:7 inSection:0];
+                        [layout modifyAttributes:attributes];
+                    });
+                    
+                    it(@"sets the cell center (two positions left of center)", ^{
+                        expect(attributes.center).to.equal(CGPointMake(770, 50));
+                    });
+                    
+                    it(@"sets the cell to be invisible", ^{
+                        expect(attributes.alpha).to.equal(0);
+                        expect(attributes.hidden).to.equal(YES);
+                    });
                 });
             });
         });
         
-        context(@"attributes are for cell right of the selected index path", ^{
-            context(@"visible cell", ^{
-                beforeEach(^{
-                    attributes.indexPath = [NSIndexPath indexPathForRow:6 inSection:0];
-                    [layout modifyAttributes:attributes];
+        context(@"vertical flow", ^{
+            beforeEach(^{
+                OCMStub([collectionViewMock frame]).andReturn(CGRectMake(0,0,100,1000));
+                layout.direction = WDWStatusFlowViewDirectionVertical;
+            });
+            
+            context(@"attributes are for the cell above the selected index path", ^{
+                context(@"visible cell", ^{
+                    beforeEach(^{
+                        attributes.indexPath = [NSIndexPath indexPathForRow:4 inSection:0];
+                        [layout modifyAttributes:attributes];
+                    });
+                    
+                    it(@"sets the cell center (one position above of center)", ^{
+                        expect(attributes.center).to.equal(CGPointMake(50,415));
+                    });
+                    
+                    it(@"sets the hidden attribute to NO", ^{
+                        expect(attributes.hidden).to.equal(NO);
+                    });
                 });
                 
-                it(@"sets the cell center (one position right of center)", ^{
-                    expect(attributes.center).to.equal(CGPointMake(660,50));
-                });
-                
-                it(@"sets the hidden attribute to NO", ^{
-                    expect(attributes.hidden).to.equal(NO);
+                context(@"hidden cell", ^{
+                    beforeEach(^{
+                        attributes.indexPath = [NSIndexPath indexPathForRow:3 inSection:0];
+                        [layout modifyAttributes:attributes];
+                    });
+                    
+                    it(@"sets the cell center (two positions left of center)", ^{
+                        expect(attributes.center).to.equal(CGPointMake(50,355));
+                    });
+                    
+                    it(@"sets the cell to be invisible", ^{
+                        expect(attributes.alpha).to.equal(0);
+                        expect(attributes.hidden).to.equal(YES);
+                    });
                 });
             });
             
-            context(@"hidden cell", ^{
-                beforeEach(^{
-                    attributes.indexPath = [NSIndexPath indexPathForRow:7 inSection:0];
-                    [layout modifyAttributes:attributes];
+            context(@"attributes are for the cell below the selected index path", ^{
+                context(@"visible cell", ^{
+                    beforeEach(^{
+                        attributes.indexPath = [NSIndexPath indexPathForRow:6 inSection:0];
+                        [layout modifyAttributes:attributes];
+                    });
+                    
+                    it(@"sets the cell center (one position right of center)", ^{
+                        expect(attributes.center).to.equal(CGPointMake(50,585));
+                    });
+                    
+                    it(@"sets the hidden attribute to NO", ^{
+                        expect(attributes.hidden).to.equal(NO);
+                    });
                 });
                 
-                it(@"sets the cell center (two positions left of center)", ^{
-                    expect(attributes.center).to.equal(CGPointMake(770, 50));
-                });
-                
-                it(@"sets the cell to be invisible", ^{
-                    expect(attributes.alpha).to.equal(0);
-                    expect(attributes.hidden).to.equal(YES);
+                context(@"hidden cell", ^{
+                    beforeEach(^{
+                        attributes.indexPath = [NSIndexPath indexPathForRow:3 inSection:0];
+                        [layout modifyAttributes:attributes];
+                    });
+                    
+                    it(@"sets the cell center (two positions left of center)", ^{
+                        expect(attributes.center).to.equal(CGPointMake(50,355));
+                    });
+                    
+                    it(@"sets the cell to be invisible", ^{
+                        expect(attributes.alpha).to.equal(0);
+                        expect(attributes.hidden).to.equal(YES);
+                    });
+
                 });
             });
         });

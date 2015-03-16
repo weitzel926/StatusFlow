@@ -20,11 +20,13 @@
 //WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 #import <UIKit/UIKit.h>
+#import "WDWStatusFlowEnum.h"
 
 @interface WDWStatusFlowLayout : UICollectionViewFlowLayout
 
-@property (nonatomic, assign) NSInteger gapBetweenCells;
+- (instancetype)initWithSelectedItemPath:(NSIndexPath *)itemPath andDirection:(WDWStatusFlowViewDirection)direction;
+- (instancetype)initWithSelectedItemPath:(NSIndexPath *)itemPath  __deprecated;
 
-- (instancetype)initWithSelectedItemPath:(NSIndexPath *)itemPath;
+@property (nonatomic, assign) NSInteger gapBetweenCells;
 
 @end

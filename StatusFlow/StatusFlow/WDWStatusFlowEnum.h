@@ -19,11 +19,12 @@
 //OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
 //WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-#import <UIKit/UIKit.h>
-#import "WDWStatusFlowEnum.h"
+#ifndef StatusFlow_WDWStatusFlowEnum_h
+#define StatusFlow_WDWStatusFlowEnum_h
 
-@interface WDWStatusFlowView : UICollectionView
-@property (nonatomic, assign) NSInteger selectedIndex;
-@property (nonatomic, assign) NSInteger gapBetweenCells;
-@property (nonatomic, assign) WDWStatusFlowViewDirection direction;
-@end
+typedef NS_ENUM(NSInteger, WDWStatusFlowViewDirection) {
+    WDWStatusFlowViewDirectionHorizontal,
+    WDWStatusFlowViewDirectionVertical
+};
+
+#endif

@@ -11,6 +11,7 @@
 
 @interface WDWStatusFlowLayout (Test)
 @property (nonatomic, strong) NSIndexPath *selectedItemPath;
+@property (nonatomic, assign) WDWStatusFlowViewDirection direction;
 @end
 
 SpecBegin(WDWStatusFlowView)
@@ -39,6 +40,10 @@ describe(@"WDWStatusFlowView", ^{
             expect(view.showsHorizontalScrollIndicator).to.beFalsy();
             expect(view.showsVerticalScrollIndicator).to.beFalsy();
         });
+        
+        it(@"initializes the direction to horizontal", ^{
+            expect(view.direction).to.equal(WDWStatusFlowViewDirectionHorizontal);
+        });
     });
     
     describe(@"#initWithFrame", ^{
@@ -66,7 +71,10 @@ describe(@"WDWStatusFlowView", ^{
             expect(view.showsHorizontalScrollIndicator).to.beFalsy();
             expect(view.showsVerticalScrollIndicator).to.beFalsy();
         });
-
+        
+        it(@"initializes the direction to horizontal", ^{
+            expect(view.direction).to.equal(WDWStatusFlowViewDirectionHorizontal);
+        });
     });
 
     describe(@"#selectedIndex", ^{
@@ -74,6 +82,8 @@ describe(@"WDWStatusFlowView", ^{
         
         beforeEach(^{
             statusFlowViewMock = OCMPartialMock(view);
+            // NOTE: stubs are so we don't reset the layout setting these properties directly
+            OCMStub([statusFlowViewMock direction]).andReturn(WDWStatusFlowViewDirectionVertical);
             OCMStub([statusFlowViewMock gapBetweenCells]).andReturn(44);
             view.selectedIndex = 4;
         });
@@ -89,7 +99,7 @@ describe(@"WDWStatusFlowView", ^{
             expect(view.selectedIndex).to.equal(4);
         });
         
-        context(@"update the flow layout", ^{
+        context(@"updates the flow layout", ^{
             __block WDWStatusFlowLayout *layout;
             
             beforeEach(^{
@@ -105,6 +115,10 @@ describe(@"WDWStatusFlowView", ^{
                 expect(layout.selectedItemPath).to.equal([NSIndexPath indexPathForRow:4 inSection:0]);
             });
             
+            it(@"initializes the flow layout with the current direction", ^{
+                expect(layout.direction).to.equal(WDWStatusFlowViewDirectionVertical);
+            });
+            
             it(@"sets the gap inbetween cells", ^{
                 expect(layout.gapBetweenCells).to.equal(44);
             });
@@ -116,7 +130,9 @@ describe(@"WDWStatusFlowView", ^{
         
         beforeEach(^{
             statusFlowViewMock = OCMPartialMock(view);
+            // NOTE: stubs are so we don't reset the layout setting these properties directly
             OCMStub([statusFlowViewMock selectedIndex]).andReturn(5);
+            OCMStub([statusFlowViewMock direction]).andReturn(WDWStatusFlowViewDirectionVertical);
             view.gapBetweenCells = 55;
         });
         
@@ -124,7 +140,7 @@ describe(@"WDWStatusFlowView", ^{
             expect(view.gapBetweenCells).to.equal(55);
         });
         
-        context(@"update the flow layout", ^{
+        context(@"updates the flow layout", ^{
             __block WDWStatusFlowLayout *layout;
             
             beforeEach(^{
@@ -140,12 +156,56 @@ describe(@"WDWStatusFlowView", ^{
                 expect(layout.selectedItemPath).to.equal([NSIndexPath indexPathForRow:5 inSection:0]);
             });
             
+            it(@"initializes the flow layout with the current direction", ^{
+                expect(layout.direction).to.equal(WDWStatusFlowViewDirectionVertical);
+            });
+            
             it(@"sets the gap inbetween cells", ^{
                 expect(layout.gapBetweenCells).to.equal(55);
             });
         });
     });
     
+    describe(@"#setDirection:", ^{
+        __block id statusFlowViewMock;
+        
+        beforeEach(^{
+            statusFlowViewMock = OCMPartialMock(view);
+            // NOTE: stubs are so we don't reset the layout setting these properties directly
+            OCMStub([statusFlowViewMock selectedIndex]).andReturn(5);
+            OCMStub([statusFlowViewMock gapBetweenCells]).andReturn(44);
+            view.direction = WDWStatusFlowViewDirectionVertical;
+        });
+        
+        it(@"sets the direction property", ^{
+            expect(view.direction).to.equal(WDWStatusFlowViewDirectionVertical);
+        });
+        
+        context(@"updates the flow layout", ^{
+            __block WDWStatusFlowLayout *layout;
+            
+            beforeEach(^{
+                layout = (WDWStatusFlowLayout *)view.collectionViewLayout;
+            });
+            
+            it(@"creates and sets the collection view layout with animation", ^{
+                OCMVerify([statusFlowViewMock setCollectionViewLayout:[OCMArg any]
+                                                             animated:YES]);
+            });
+            
+            it(@"initializes the flow layout with the selected index path", ^{
+                expect(layout.selectedItemPath).to.equal([NSIndexPath indexPathForRow:5 inSection:0]);
+            });
+            
+            it(@"initializes the flow layout with the current direction", ^{
+                expect(layout.direction).to.equal(WDWStatusFlowViewDirectionVertical);
+            });
+            
+            it(@"sets the gap inbetween cells", ^{
+                expect(layout.gapBetweenCells).to.equal(44);
+            });
+        });
+    });
 });
 
 SpecEnd

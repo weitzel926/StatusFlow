@@ -22,6 +22,7 @@
 #import "WDWExampleStatusFlowViewController.h"
 #import "WDWExampleStatusFlowCell.h"
 #import "WDWStatusFlowView.h"
+#import "WDWStatusFlowEnum.h"
 
 @interface WDWExampleStatusFlowViewController ()
 @property (weak, nonatomic) IBOutlet WDWStatusFlowView *statusFlowView;
@@ -71,6 +72,7 @@
     self.statusFlowView.dataSource = self;
     self.statusFlowView.delegate = self;
     self.statusFlowView.gapBetweenCells = 10;
+    self.statusFlowView.direction = WDWStatusFlowViewDirectionHorizontal;
 }
 
 #pragma - UICollectionViewDataSource
@@ -98,7 +100,7 @@
     return cell;
 }
 
-#pragma - UICollectionViewDelegate
+#pragma - UICollectionViewDelegateFlowLayout
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
 {

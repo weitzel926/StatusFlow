@@ -23,9 +23,21 @@
 
 @interface WDWStatusFlowLayout ()
 @property (nonatomic, strong) NSIndexPath *selectedItemPath;
+@property (nonatomic, assign) WDWStatusFlowViewDirection direction;
 @end
 
 @implementation WDWStatusFlowLayout
+
+- (instancetype)initWithSelectedItemPath:(NSIndexPath *)itemPath andDirection:(WDWStatusFlowViewDirection)direction
+{
+    self = [super init];
+    if (self) {
+        self.selectedItemPath = itemPath;
+        self.gapBetweenCells = 5;
+        self.direction = direction;
+    }
+    return self;
+}
 
 - (instancetype)initWithSelectedItemPath:(NSIndexPath *)itemPath
 {
@@ -33,6 +45,7 @@
     if (self) {
         self.selectedItemPath = itemPath;
         self.gapBetweenCells = 5;
+        self.direction = WDWStatusFlowViewDirectionHorizontal;
     }
     return self;
 }
@@ -63,22 +76,40 @@
         NSInteger indexFromCenterItem = ABS(self.selectedItemPath.row - attributes.indexPath.row);  //ABS macro is architecture safe
         
         CGRect collectionViewFrame = self.collectionView.frame;
-        CGFloat centerX = collectionViewFrame.size.width/2;
+        
+        CGFloat centerX = self.collectionView.frame.size.width/2;
+        CGFloat centerY = self.collectionView.frame.size.height/2;
+        
         CGFloat widthCenterCell = attributes.size.width * 2;
         CGFloat widthCell = attributes.size.width;
+        
+        CGFloat heightCenterCell = attributes.size.height * 2;
+        CGFloat heightCell = attributes.size.height;
+        
+        CGFloat x, y;
         
         if ([attributes.indexPath isEqual:self.selectedItemPath]) {
             attributes.center = CGPointMake(collectionViewFrame.size.width/2, collectionViewFrame.size.height/2);
             attributes.transform = CGAffineTransformMakeScale(2.0, 2.0);
             
         } else if (attributes.indexPath.row < self.selectedItemPath.row) {
-            CGFloat x = centerX - widthCenterCell/2 - widthCell/2 - indexFromCenterItem*self.gapBetweenCells - (indexFromCenterItem-1)*widthCell;
-            CGFloat y = collectionViewFrame.size.height/2;
+            if (self.direction == WDWStatusFlowViewDirectionHorizontal){
+                x = centerX - widthCenterCell/2 - widthCell/2 - indexFromCenterItem*self.gapBetweenCells - (indexFromCenterItem-1)*widthCell;
+                y = collectionViewFrame.size.height/2;
+            } else {  // vertical
+                y = centerY - heightCenterCell/2 - heightCell/2 - indexFromCenterItem*self.gapBetweenCells - (indexFromCenterItem-1)*heightCell;
+                x = collectionViewFrame.size.width/2;
+            }
             attributes.center = CGPointMake(x,y);
-            
         } else if (attributes.indexPath.row > self.selectedItemPath.row) {
-            CGFloat x = centerX + widthCenterCell/2 + widthCell/2 + indexFromCenterItem*self.gapBetweenCells + (indexFromCenterItem-1)*widthCell;
-            CGFloat y = collectionViewFrame.size.height/2;
+            if (self.direction == WDWStatusFlowViewDirectionHorizontal){
+                x = centerX + widthCenterCell/2 + widthCell/2 + indexFromCenterItem*self.gapBetweenCells + (indexFromCenterItem-1)*widthCell;
+                y = collectionViewFrame.size.height/2;
+            } else { // vertical
+                y = centerY + heightCenterCell/2 + heightCell/2 + indexFromCenterItem*self.gapBetweenCells + (indexFromCenterItem-1)*heightCell;
+                x = collectionViewFrame.size.width/2;
+            }
+            
             attributes.center = CGPointMake(x, y);
         }
         

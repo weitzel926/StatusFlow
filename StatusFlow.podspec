@@ -31,7 +31,7 @@ Pod::Spec.new do |s|
   s.platform     			= :ios
   s.ios.deployment_target 	= "7.0"
   s.source       			= { :git => "https://github.com/weitzel926/StatusFlow.git", :tag => s.version.to_s }
-  s.public_header_files  	= 'StatusFlow/StatusFlow/WDWStatusFlowView.h',   'StatusFlow/StatusFlow/WDWStatusFlowLayout.h'
+  s.public_header_files  	= 'StatusFlow/StatusFlow/WDWStatusFlowView.h',   'StatusFlow/StatusFlow/WDWStatusFlowLayout.h', 'StatusFlow/StatusFlow/WDWStatusFlowEnum.h'
   s.source_files          	= 'StatusFlow/StatusFlow/*.{h,m}'
   s.framework  				= 'Foundation', 'UIKit'
   s.requires_arc 			= true

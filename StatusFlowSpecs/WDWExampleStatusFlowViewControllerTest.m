@@ -83,7 +83,7 @@ describe(@"WDWExampleStatusFlowViewController", ^{
     });
     
     describe(@"#viewDidLoad", ^{
-       beforeEach(^{
+        beforeEach(^{
             [controller view];
         });
         
@@ -102,6 +102,10 @@ describe(@"WDWExampleStatusFlowViewController", ^{
             
             it(@"sets the gap between the cells", ^{
                 expect(controller.statusFlowView.gapBetweenCells).to.equal(10);
+            });
+            
+            it(@"sets the status flow direction", ^{
+                expect(controller.statusFlowView.direction).to.equal(WDWStatusFlowViewDirectionHorizontal);
             });
         });
     });

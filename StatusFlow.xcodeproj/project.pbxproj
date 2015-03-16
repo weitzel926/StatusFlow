@@ -40,6 +40,7 @@
 /* Begin PBXFileReference section */
 		1864BD5A1AACC89700BA2DBD /* WDWExampleStatusFlowViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WDWExampleStatusFlowViewController.h; sourceTree = "<group>"; };
 		1864BD5B1AACC89700BA2DBD /* WDWExampleStatusFlowViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDWExampleStatusFlowViewController.m; sourceTree = "<group>"; };
+		18735EC21AB67B3D00F72EA9 /* WDWStatusFlowEnum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WDWStatusFlowEnum.h; path = StatusFlow/WDWStatusFlowEnum.h; sourceTree = "<group>"; };
 		18C4A33D1AA4B5E50060789D /* WDWExampleStatusFlowCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WDWExampleStatusFlowCell.h; sourceTree = "<group>"; };
 		18C4A33E1AA4B5E50060789D /* WDWExampleStatusFlowCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDWExampleStatusFlowCell.m; sourceTree = "<group>"; };
 		18C4A3411AA4B6120060789D /* WDWExampleStatusFlowCellTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDWExampleStatusFlowCellTest.m; sourceTree = "<group>"; };
@@ -162,6 +163,7 @@
 		18DD4C661AA3805700991F7A /* StatusFlow */ = {
 			isa = PBXGroup;
 			children = (
+				18735EC21AB67B3D00F72EA9 /* WDWStatusFlowEnum.h */,
 				18DD4C671AA3808E00991F7A /* WDWStatusFlowLayout.h */,
 				18DD4C681AA3808E00991F7A /* WDWStatusFlowLayout.m */,
 				18DD4C6B1AA3812100991F7A /* WDWStatusFlowView.h */,
