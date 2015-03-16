@@ -82,6 +82,9 @@ To clean the project form the command line:
 ```bash
 $ bundle exec rake clean
 ```
+## Version history
+
+Version history can be found in the [wiki](https://github.com/weitzel926/StatusFlow/wiki)
 
 ## Acknowledgements
 
