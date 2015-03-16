@@ -1,14 +1,16 @@
-# StatusFlow [![Build Status](https://travis-ci.org/weitzel926/StatusFlow.svg?branch=master)](https://travis-ci.org/weitzel926/StatusFlow) [![Cocoapod Version](http://img.shields.io/badge/pod-v0.0.2-blue.svg)](http://cocoapods.org/?q=StatusFlow) [![Cocoapod Platform](http://img.shields.io/badge/platform-iOS-blue.svg)](http://cocoapods.org/?q=StatusFlow) [![License](http://b.repl.ca/v1/License-MIT-blue.png)](https://github.com/weitzel926/StatusFlow/blob/master/MIT.LICENSE)
+# StatusFlow [![Build Status](https://travis-ci.org/weitzel926/StatusFlow.svg?branch=master)](https://travis-ci.org/weitzel926/StatusFlow) [![Cocoapod Version](http://img.shields.io/badge/pod-v0.0.3-blue.svg)](http://cocoapods.org/?q=StatusFlow) [![Cocoapod Platform](http://img.shields.io/badge/platform-iOS-blue.svg)](http://cocoapods.org/?q=StatusFlow) [![License](http://b.repl.ca/v1/License-MIT-blue.png)](https://github.com/weitzel926/StatusFlow/blob/master/MIT.LICENSE)
 
 StatusFlow is an iOS implementation of a simple to use UICollectionView intended to show meaningful status that is animated and beautiful.  
 
-![Alt text](https://github.com/weitzel926/StatusFlow/blob/master/docs/AnimatedStatusFlow.gif)
+![Alt text](https://github.com/weitzel926/StatusFlow/blob/master/docs/AnimatedStatusFlow.gif) 
 
 ## Features 
 
 StatusFlow is a custom UICollectionView with a custom UICollectionViewFlowLayout. 
 
-It is intended to show incremental status, such that the "current" item is twice the size of other items in the collection view, is the selected item, and is centered horizontally and vertically within the view.  The previous item is to the left of center and the next item is to the right.  Other items are invisible and will fade in/fade out as the selected index is incremented.  Although the setting of any selected index is supported, the control is intended to be used by incrementing or decrementing the selected index.  Because it is a custom UICollectionView, any cell type is supported (although, most likely, your cell will just be a UIImageView).  Since this is an informational control, user interaction is disabled.  
+It is intended to show incremental status, such that the "current" item is twice the size of other items in the collection view, is the selected item, and is centered horizontally and vertically within the view.  The previous item is to the left of center and the next item is to the right.  Other items are invisible and will fade in/fade out as the selected index is incremented.  Although the setting of any selected index is supported, the control is intended to be used by incrementing or decrementing the selected index.  Because it is a custom UICollectionView, any cell type is supported (although, most likely, your cell will just be a UIImageView).  Since this is an informational control, user interaction is disabled.  The typical mode is horizontal, but StatusFlow now supports vertical as well.  
+
+![Alt text](https://github.com/weitzel926/StatusFlow/blob/master/docs/vertical.gif)
 
 ## Usage
 
@@ -43,6 +45,7 @@ StatusFlowView works very similar to using a UICollectionView.  See the example 
 5. Create the cell in the storyboard, and link it to the cell class using the Custom Class -> Class property. 
 6. Make sure your UIViewController conforms to UICollectionViewDataSource and UICollectionViewDelegateFlowLayout (for collectionView:layout:sizeForItemAtIndexPath). 
 7. In your ViewController's viewDidLoad method, use the StatusFlowView's gapBetweenCells property to define the space between each cell.  The default is 5.  
+8. In your ViewController's viewDidLoad method, you can set the direction property on your StatusFlowView object to either WDWStatusFlowViewDirectionHorizontal or WDWStatusFlowViewDirectionVertical.  It will be horizontal by default.   
 8. Implement collectionView:numberOfItemsInSection.  Note that there can only be ONE section.  
 9. Implement collectionView:cellForItemAtIndexPath
 10. Implement collectionView:layout:sizeForItemAtIndexPath: to set the cell's size.  The size of the cell is the size of the cell when it is NOT selected.  It will double in size when selected.  If your selected cell is larger than the collection view in width or height, it may not render properly.    
