@@ -21,8 +21,7 @@ describe(@"WDWStatusFlowView", ^{
     __block WDWStatusFlowView *view;
     
     beforeEach(^{
-        id coderMock = OCMClassMock([NSCoder class]);
-        view = [[WDWStatusFlowView alloc] initWithCoder:coderMock];
+        view = [[WDWStatusFlowView alloc] initWithCoder:nil];
     });
 
     describe(@"#initWithCoder:", ^{
