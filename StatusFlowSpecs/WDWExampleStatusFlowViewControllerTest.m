@@ -32,7 +32,8 @@ describe(@"WDWExampleStatusFlowViewController", ^{
         __block WDWExampleStatusFlowViewController *coderController;
         
         beforeEach(^{
-            coderController = [[WDWExampleStatusFlowViewController alloc] initWithCoder:nil];
+            id coderMock = OCMClassMock([NSCoder class]);
+            coderController = [[WDWExampleStatusFlowViewController alloc] initWithCoder:coderMock];
         });
         
         it(@"initializes the data", ^{

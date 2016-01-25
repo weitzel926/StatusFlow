@@ -2,6 +2,7 @@
 #define EXP_SHORTHAND
 #import <Expecta/Expecta.h>
 #import <OCMock/OCMock.h>
+#import <Swizzlean/Swizzlean.h>
 #import "WDWStatusFlowView.h"
 #import "WDWStatusFlowLayout.H"
 
@@ -20,7 +21,8 @@ describe(@"WDWStatusFlowView", ^{
     __block WDWStatusFlowView *view;
     
     beforeEach(^{
-        view = [[WDWStatusFlowView alloc] initWithCoder:nil];
+        id coderMock = OCMClassMock([NSCoder class]);
+        view = [[WDWStatusFlowView alloc] initWithCoder:coderMock];
     });
 
     describe(@"#initWithCoder:", ^{
@@ -79,13 +81,27 @@ describe(@"WDWStatusFlowView", ^{
 
     describe(@"#selectedIndex", ^{
         __block id statusFlowViewMock;
+        __block Swizzlean *viewSwizz;
         
         beforeEach(^{
+            // NOTE: This swizzle is so we don't reset the layout by setting this property directly.  This was
+            // a stub like gapBetweenCells, but OCMock was detecting a name collision with UISwipeGestureRecognizer
+            // for some reason I don't understand (It's not in the UICollectionView hierarchy).  This is a workaround.
+            viewSwizz = [[Swizzlean alloc] initWithClassToSwizzle:[WDWStatusFlowView class]];
+            [viewSwizz swizzleInstanceMethod:@selector(direction) withReplacementImplementation:^(id self) {
+                return WDWStatusFlowViewDirectionVertical;
+            }];
+            
             statusFlowViewMock = OCMPartialMock(view);
-            // NOTE: stubs are so we don't reset the layout setting these properties directly
-            OCMStub([statusFlowViewMock direction]).andReturn(WDWStatusFlowViewDirectionVertical);
+            
+            // NOTE: stub so we don't reset the layout gapBetweenCells property directly
             OCMStub([statusFlowViewMock gapBetweenCells]).andReturn(44);
+            
             view.selectedIndex = 4;
+        });
+        
+        afterEach(^{
+            [viewSwizz resetSwizzledInstanceMethod];
         });
         
         it(@"sets the selected item", ^{
@@ -127,13 +143,27 @@ describe(@"WDWStatusFlowView", ^{
     
     describe(@"#setGapBetweenCells:", ^{
         __block id statusFlowViewMock;
+        __block Swizzlean *viewSwizz;
         
         beforeEach(^{
+            // NOTE: This swizzle is so we don't reset the layout by setting this property directly.  This was
+            // a stub like gapBetweenCells, but OCMock was detecting a name collision with UISwipeGestureRecognizer
+            // for some reason I don't understand (It's not in the UICollectionView hierarchy).  This is a workaround.
+            viewSwizz = [[Swizzlean alloc] initWithClassToSwizzle:[WDWStatusFlowView class]];
+            [viewSwizz swizzleInstanceMethod:@selector(direction) withReplacementImplementation:^(id self) {
+                return WDWStatusFlowViewDirectionVertical;
+            }];
+            
+
             statusFlowViewMock = OCMPartialMock(view);
-            // NOTE: stubs are so we don't reset the layout setting these properties directly
+            // NOTE: stub so we don't reset the layout selectedIndex property directly
             OCMStub([statusFlowViewMock selectedIndex]).andReturn(5);
-            OCMStub([statusFlowViewMock direction]).andReturn(WDWStatusFlowViewDirectionVertical);
+            
             view.gapBetweenCells = 55;
+        });
+        
+        afterEach(^{
+            [viewSwizz resetSwizzledInstanceMethod];
         });
         
         it(@"sets the gap property", ^{
