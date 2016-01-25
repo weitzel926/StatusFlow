@@ -29,7 +29,7 @@ def build
 end
 
 def execute_xcodebuild(build_action = "build")
-  sh "xcodebuild -workspace StatusFlow.xcworkspace -scheme 'StatusFlow' -sdk iphonesimulator -configuration Release #{build_action} | xcpretty -tc ; exit ${PIPESTATUS[0]}" rescue nil
+   sh "xcodebuild -workspace StatusFlow.xcworkspace -scheme 'StatusFlow' -sdk iphonesimulator -configuration Release #{build_action} -destination 'platform=iOS Simulator,name=iPad' | xcpretty -tc ; exit ${PIPESTATUS[0]}" rescue nil
 end
 
 def run_tests
