@@ -23,7 +23,7 @@ Use [CocoaPods](http://cocoapods.org/) to add StatusFlow to your project.
 
 1. Add the StatusFlow pod to your podfile:  `pod 'StatusFlow'`
 2. Run pod install from your project folder to get the StatusFlow pod: `pod install`
-3. Open your project in XCode using the workspace instead of the project file:  `open <your_project>.xcworkspace`
+3. Open your project in Xcode using the workspace instead of the project file:  `open <your_project>.xcworkspace`
 4. `#import <StatusFlow/WDWStatusFlowView.h>` to use StatusFlow
 
 ##### Via direct usage
@@ -44,7 +44,7 @@ WDWStatusFlowView works very similar to using a UICollectionView.  See the examp
 1. Use storyboards to create a storyboard for the view controller the has your StatusFlow in it.  Drag a UICollectionView to your view controller.  This will be the status flow.  
 2. Set the Custom Class -> Class property of the storyboard to WDWStatusFlowView. 
 3. Create an outlet from the StatusFlow to your view controller.  This can be a private property.  
-4. Create a cell class in XCode.  It should inherit from UICollectionViewCell.  
+4. Create a cell class in Xcode.  It should inherit from UICollectionViewCell.  
 5. Create the cell in the storyboard, and link it to the cell class using the Custom Class -> Class property. 
 6. Make sure your UIViewController conforms to UICollectionViewDataSource and UICollectionViewDelegateFlowLayout (for collectionView:layout:sizeForItemAtIndexPath). 
 7. In your ViewController's viewDidLoad method, use the WDWStatusFlowView's gapBetweenCells property to define the space between each cell.  The default is 5.  
@@ -64,7 +64,7 @@ To setup the project, run the included setup.sh.  This will install required Gem
 $ ./setup.sh
 ```
 
-To open the project in XCode run
+To open the project in Xcode run
 
 ```bash
 $ open StatusFlow.xcworkspace
