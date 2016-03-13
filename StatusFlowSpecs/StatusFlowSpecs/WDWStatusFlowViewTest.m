@@ -21,7 +21,10 @@ describe(@"WDWStatusFlowView", ^{
     __block WDWStatusFlowView *view;
     
     beforeEach(^{
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wnonnull"
         view = [[WDWStatusFlowView alloc] initWithCoder:nil];
+#pragma clang diagnostic pop
     });
 
     describe(@"#initWithCoder:", ^{
