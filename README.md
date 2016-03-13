@@ -2,11 +2,11 @@
 
 StatusFlow is an iOS implementation of a simple to use UICollectionView intended to show meaningful status that is animated and beautiful.  
 
-![](https://github.com/weitzel926/StatusFlow/blob/master/docs/AnimatedStatusFlow.gif) 
+![](https://github.com/weitzel926/StatusFlow/blob/master/docs/AnimatedStatusFlow.gif)
 
-## Features 
+## Features
 
-StatusFlow is a custom UICollectionView with a custom UICollectionViewFlowLayout. 
+StatusFlow is a custom UICollectionView with a custom UICollectionViewFlowLayout.
 
 It is intended to show incremental status, such that the "current" item is twice the size of other items in the collection view, is the selected item, and is centered horizontally and vertically within the view.  The previous item is to the left of center and the next item is to the right.  Other items are invisible and will fade in/fade out as the selected index is incremented.  Although the setting of any selected index is supported, the control is intended to be used by incrementing or decrementing the selected index.  Because it is a custom UICollectionView, any cell type is supported (although, most likely, your cell will just be a UIImageView).  Since this is an informational control, user interaction is disabled.  The typical mode is horizontal, but StatusFlow now supports vertical as well.  
 
@@ -42,11 +42,11 @@ WDWStatusFlowView works very similar to using a UICollectionView.  See the examp
 ![Alt text](https://github.com/weitzel926/StatusFlow/blob/master/docs/xcode_sample.png)
 
 1. Use storyboards to create a storyboard for the view controller the has your StatusFlow in it.  Drag a UICollectionView to your view controller.  This will be the status flow.  
-2. Set the Custom Class -> Class property of the storyboard to WDWStatusFlowView. 
+2. Set the Custom Class -> Class property of the storyboard to WDWStatusFlowView.
 3. Create an outlet from the StatusFlow to your view controller.  This can be a private property.  
 4. Create a cell class in XCode.  It should inherit from UICollectionViewCell.  
-5. Create the cell in the storyboard, and link it to the cell class using the Custom Class -> Class property. 
-6. Make sure your UIViewController conforms to UICollectionViewDataSource and UICollectionViewDelegateFlowLayout (for collectionView:layout:sizeForItemAtIndexPath). 
+5. Create the cell in the storyboard, and link it to the cell class using the Custom Class -> Class property.
+6. Make sure your UIViewController conforms to UICollectionViewDataSource and UICollectionViewDelegateFlowLayout (for collectionView:layout:sizeForItemAtIndexPath).
 7. In your ViewController's viewDidLoad method, use the WDWStatusFlowView's gapBetweenCells property to define the space between each cell.  The default is 5.  
 8. In your ViewController's viewDidLoad method, you can set the direction property on your StatusFlowView object to either WDWStatusFlowViewDirectionHorizontal or WDWStatusFlowViewDirectionVertical.  It will be horizontal by default.   
 8. Implement collectionView:numberOfItemsInSection.  Note that there can only be ONE section.  
@@ -64,27 +64,18 @@ To setup the project, run the included setup.sh.  This will install required Gem
 $ ./setup.sh
 ```
 
-To open the project in XCode run
+To open the project in Xcode run
 
 ```bash
 $ open StatusFlow.xcworkspace
 ```
 
-To test the project from the command line:
+This project has been setup to use [fastlane](https://fastlane.tools) to run the tests.
 
 ```bash
-$ bundle exec rake
+$ bundle exec fastlane test
 ```
 
-To build the project from the command line:
-```bash
-$ bundle exec rake build
-```
-
-To clean the project form the command line:
-```bash
-$ bundle exec rake clean
-```
 ## Version history
 
 Version history can be found in the [wiki](https://github.com/weitzel926/StatusFlow/wiki)
