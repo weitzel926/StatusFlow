@@ -32,7 +32,10 @@ describe(@"WDWExampleStatusFlowViewController", ^{
         __block WDWExampleStatusFlowViewController *coderController;
         
         beforeEach(^{
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wnonnull"
             coderController = [[WDWExampleStatusFlowViewController alloc] initWithCoder:nil];
+#pragma clang diagnostic pop
         });
         
         it(@"initializes the data", ^{
