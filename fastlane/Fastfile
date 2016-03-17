@@ -2,10 +2,11 @@ default_platform :ios
 
 platform :ios do
 
-  desc "Runs all the tests (debug and release)"
+  desc "Runs all the tests (debug and release) and generates code coverage files"
   lane :test do
     test_debug
     test_release
+    code_coverage
   end
 
   desc "Run Debug tests"
@@ -16,6 +17,13 @@ platform :ios do
   desc "Run Release tests"
   lane :test_release do
     scan(configuration: "Release")
+  end
+
+  desc "Get Code Coverage"
+  lane :code_coverage do
+    scan(
+      xcargs: "OBJROOT=build GCC_GENERATE_TEST_COVERAGE_FILES=YES GCC_INSTRUMENT_PROGRAM_FLOW_ARCS=YES"
+    )
   end
 
   after_all do |lane|
